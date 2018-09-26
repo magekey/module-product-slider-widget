@@ -44,7 +44,7 @@
             </parameter>
             <parameter name="slider.mode" xsi:type="select" required="true" visible="true" sort_order="65">
                 <label translate="true">Mode</label>
-                <description translate="true"><![CDATA[Type of transition between slides<br/>Vertical and Fade modes work only with one item.]]></description>
+                <description translate="true"><![CDATA[Type of transition between slides.<br/>Vertical and Fade modes work only with one item.]]></description>
                 <options>
                     <option name="horizontal" value="horizontal" selected="true">
                         <label translate="true">Horizontal</label>
