@@ -1,0 +1,71 @@
+// /**
+//  * Copyright © MageKey. All rights reserved.
+//  * See LICENSE.txt for license details.
+//  */
+
+& when (@media-common = true) {
+
+	.owl-theme {
+		// Styling Next and Prev buttons
+		.owl-nav {
+			text-align: center;
+			-webkit-tap-highlight-color: transparent;
+
+			.owl-prev,
+			.owl-next {
+				color: @mgk-psw__owl__nav__color;
+				font-size: @mgk-psw__owl__nav__font-size;
+				margin: @mgk-psw__owl__nav__margin;
+				padding: @mgk-psw__owl__nav__padding;
+				background: @mgk-psw__owl__nav__background;
+				display: inline-block;
+				cursor: pointer;
+				border-radius: 3px;
+
+				&:hover {
+					color:@mgk-psw__owl__nav-hover__color;
+					text-decoration: none;
+				}
+			}
+			.disabled {
+				opacity: @mgk-psw__owl__nav-disabled__opacity;
+				cursor: default;
+			}
+		}
+
+		// Styling dots
+		.owl-nav.disabled + .owl-dots {
+			margin-top: 10px;
+		}
+
+		.owl-dots {
+			text-align: center;
+			-webkit-tap-highlight-color: transparent;
+
+			.owl-dot {
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+
+				span {
+					width: @mgk-psw__owl__dot__width;
+					height: @mgk-psw__owl__dot__height;
+					margin: @mgk-psw__owl__dot__margin;
+					background: @mgk-psw__owl__dot__background;
+					display: block;
+					-webkit-backface-visibility: visible;
+					transition: opacity 200ms ease;
+					border-radius: @mgk-psw__owl__dot__rounded;
+				}
+
+				&.active,
+				&:hover {
+					span {
+						background: @mgk-psw__owl__dot-active__background;
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -12,7 +12,7 @@ define([
 
     $.widget('mage.mgkProductSlider_Owl', $.mage.mgkProductSlider, {
         options: {
-            sliderClass: 'owl-carousel',
+            sliderClass: 'owl-carousel owl-theme',
         },
 
         /**
@@ -23,6 +23,17 @@ define([
 
             options = $.extend({}, {
                 autoplayHoverPause: true,
+                responsiveClass:true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        dots: false
+                    },
+                    600: {
+                        items: options.items > 2 ? 3 : options.items
+                    },
+                    768: {}
+                },
                 onInitialize: function () {
                     self._showElement();
                 }

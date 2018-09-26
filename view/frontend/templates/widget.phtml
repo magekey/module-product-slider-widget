@@ -28,7 +28,7 @@
     <div class="mgk-psw-block block widget block-products-list <?= /* @noEscape */ $mode ?>"
          style="visibility: hidden;"
          data-mage-init='{"MageKey_ProductSliderWidget/js/slider-owl": {
-            "sliderSelector": ".product-items",
+            "sliderSelector": ".slider-items",
             "sliderOptions": <?= /* @noEscape */ $sliderOptions->toJson() ?>
          }}'>
         <?php if ($block->getTitle()): ?>
@@ -39,7 +39,7 @@
         <div class="block-content">
             <?= /* @noEscape */ '<!-- ' . $image . '-->' ?>
             <div class="products-slider <?= /* @noEscape */ $mode ?>">
-                <div class="product-items <?= /* @noEscape */ $type ?>">
+                <div class="slider-items <?= /* @noEscape */ $type ?>">
                     <?php $iterator = 1; ?>
                     <?php foreach ($items as $_item): ?>
                         <?= /* @noEscape */ ($iterator++ == 1) ? '<div class="product-item">' : '</div><div class="product-item">' ?>

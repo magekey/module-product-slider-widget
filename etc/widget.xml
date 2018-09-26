@@ -98,9 +98,6 @@
             <parameter name="slider.auto_interval" xsi:type="text" visible="true" sort_order="100" required="true">
                 <label translate="true">Autoplay Interval</label>
                 <description translate="true">The amount of time (in ms) between each auto transition</description>
-                <depends>
-                    <parameter name="slider.auto" value="1" />
-                </depends>
                 <value>3000</value>
             </parameter>
             <!-- Slider / Controls -->

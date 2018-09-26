@@ -4,6 +4,13 @@
 //  */
 
 //
+//  Theme
+//  _____________________________________________
+
+@import '_theme.default.less';
+@import '_theme.less';
+
+//
 //  Common
 //  _____________________________________________
 
@@ -85,10 +92,22 @@
 		.owl-nav button.owl-next,
 		button.owl-dot {
 			background: none;
-			color: inherit;
 			border: none;
 			padding:0!important;
-			font: inherit;
+		}
+
+		.owl-nav button.owl-prev,
+		.owl-nav button.owl-next {
+			position: absolute;
+    		top: 40%;
+		}
+
+		.owl-nav button.owl-prev {
+			left: 0;
+		}
+
+		.owl-nav button.owl-next {
+			right: 0;
 		}
 
 		&.owl-loaded {
@@ -245,5 +264,4 @@
 			width: 100%;
 		}
 	}
-
 }

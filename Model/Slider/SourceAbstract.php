@@ -17,7 +17,8 @@ abstract class SourceAbstract
     {
         $data = [];
         foreach ($this->getMapFields() as $sliderConfig => $widgetConfig) {
-            $data[$sliderConfig] = isset($options[$widgetConfig]) ? $options[$widgetConfig] : null;
+            $val = isset($options[$widgetConfig]) ? $options[$widgetConfig] : null;
+            $data[$sliderConfig] = is_numeric($val) ? (float)$val : $val;
         }
         
         return $data;
