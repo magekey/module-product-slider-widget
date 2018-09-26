@@ -1,0 +1,45 @@
+// /**
+//  * Copyright © MageKey. All rights reserved.
+//  * See LICENSE.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@mgk-psw__module__path: '../MageKey_ProductSliderWidget';
+
+@mgk-psw__item__margin: 1rem;
+@mgk-psw__item__padding: 1rem;
+
+//
+//  Libs
+//  _____________________________________________
+
+@import 'animate/_source.less';
+@import 'owl/_source.less';
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+	.mgk-psw-block.block.widget {
+		.product {
+			&-item {
+				margin: 0 !important;
+
+				&-info {
+					width: auto;
+					margin: @mgk-psw__item__margin;
+					padding: @mgk-psw__item__padding;
+				}
+				&-photo {
+					text-align: center;
+    				width: 100%;
+    				display: block;
+				}
+			}
+		}
+	}
+}

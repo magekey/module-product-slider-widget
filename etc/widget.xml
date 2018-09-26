@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © MageKey. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="mgk_products_list_slider" class="MageKey\ProductSliderWidget\Block\Widget" is_email_compatible="true"
+            placeholder_image="Magento_CatalogWidget::images/products_list.png" ttl="86400">
+        <label translate="true">Catalog Products Slider</label>
+        <description translate="true">Products Slider</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true" sort_order="10">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true" sort_order="20">
+                <label translate="true">Number of Products in Slider</label>
+                <value>12</value>
+            </parameter>
+            <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="30"
+                       class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+                <label translate="true">Conditions</label>
+            </parameter>
+            <!-- Slider / General -->
+            <parameter name="slider_fieldset_general" xsi:type="block" visible="true" sort_order="50">
+                <label/>
+                <block class="MageKey\ProductSliderWidget\Block\Adminhtml\Widget\Fieldset">
+                    <data>
+                        <item name="label" translate="true" xsi:type="string">Slider General Settings</item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="slider.slides" xsi:type="text" visible="true" required="true" sort_order="55">
+                <label translate="true">Slides</label>
+                <description translate="true">The number of items you want to see on the screen.</description>
+                <value>4</value>
+            </parameter>
+            <parameter name="slider.slides_move" xsi:type="text" visible="true" required="true" sort_order="60">
+                <label translate="true">Move Slides</label>
+                <description translate="true">Navigation slide by x.</description>
+                <value>1</value>
+            </parameter>
+            <parameter name="slider.mode" xsi:type="select" required="true" visible="true" sort_order="65">
+                <label translate="true">Mode</label>
+                <description translate="true"><![CDATA[Type of transition between slides<br/>Vertical and Fade modes work only with one item.]]></description>
+                <options>
+                    <option name="horizontal" value="horizontal" selected="true">
+                        <label translate="true">Horizontal</label>
+                    </option>
+                    <option name="vertical" value="vertical">
+                        <label translate="true">Vertical</label>
+                    </option>
+                    <option name="fade" value="fade">
+                        <label translate="true">Fade</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="slider.speed" xsi:type="text" required="true" visible="true" sort_order="70">
+                <label translate="true">Speed</label>
+                <description translate="true">Slide transition duration (in ms)</description>
+                <value>500</value>
+            </parameter>
+            <parameter name="slider.loop" xsi:type="select" visible="true" sort_order="75">
+                <label translate="true">Infinite Loop</label>
+                <description translate="true"><![CDATA[If true, clicking "Next" while on the last slide will transition to the first slide and vice-versa]]></description>
+                <options>
+                    <option name="yes" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <!-- Slider / Auto -->
+            <parameter name="slider_fieldset_auto" xsi:type="block" visible="true" sort_order="90">
+                <label/>
+                <block class="MageKey\ProductSliderWidget\Block\Adminhtml\Widget\Fieldset">
+                    <data>
+                        <item name="label" translate="true" xsi:type="string">Slider Auto Settings</item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="slider.auto" xsi:type="select" visible="true" sort_order="95">
+                <label translate="true">Autoplay</label>
+                <description translate="true">Slides will automatically transition</description>
+                <options>
+                    <option name="yes" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="slider.auto_interval" xsi:type="text" visible="true" sort_order="100" required="true">
+                <label translate="true">Autoplay Interval</label>
+                <description translate="true">The amount of time (in ms) between each auto transition</description>
+                <depends>
+                    <parameter name="slider.auto" value="1" />
+                </depends>
+                <value>3000</value>
+            </parameter>
+            <!-- Slider / Controls -->
+            <parameter name="slider_fieldset_controls" xsi:type="block" visible="true" sort_order="110">
+                <label/>
+                <block class="MageKey\ProductSliderWidget\Block\Adminhtml\Widget\Fieldset">
+                    <data>
+                        <item name="label" translate="true" xsi:type="string">Slider Controls Settings</item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="slider.arrows" xsi:type="select" visible="true" sort_order="115">
+                <label translate="true">Arrows</label>
+                <description translate="true"><![CDATA[If true, "Next" / "Prev" controls will be added]]></description>
+                <options>
+                    <option name="yes" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="slider.dots" xsi:type="select" visible="true" sort_order="120">
+                <label translate="true">Dots</label>
+                <description translate="true">Show dot indicators</description>
+                <options>
+                    <option name="yes" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0" selected="true">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="slider.draggable" xsi:type="select" visible="true" sort_order="125">
+                <label translate="true">Draggable</label>
+                <description translate="true">Enable mouse dragging</description>
+                <options>
+                    <option name="yes" value="1" selected="true">
+                        <label translate="true">Yes</label>
+                    </option>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="MageKey_ProductSliderWidget::widget.phtml" selected="true">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
